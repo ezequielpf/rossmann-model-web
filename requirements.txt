@@ -9,7 +9,7 @@ DateTime==5.1
 debugpy==1.6.7
 decorator==5.1.1
 executing==1.2.0
-Flask==2.3.2
+Flask==2.2.5
 idna==3.4
 importlib-metadata==6.8.0
 inflection==0.5.1
