@@ -15,7 +15,8 @@ import xgboost as xgb
 class Rossmann(object):
 
     def __init__(self):
-        self.home_path = '/home/ezequiel/Documentos/Prejetos_Data_Science/DS_em_producao/app_web/'
+        #self.home_path = '/home/ezequiel/Documentos/Prejetos_Data_Science/DS_em_producao/app_web/'
+        self.home_path = ''
         self.competition_distance_scaler = pickle.load(open(self.home_path + 'parameter/competition_distance_scaler.pkl', 'rb'))
         self.competition_time_month_scaler = pickle.load(open(self.home_path + 'parameter/competition_time_month_scaler.pkl', 'rb'))
         self.year_scaler = pickle.load(open(self.home_path + 'parameter/year_scaler.pkl', 'rb'))
