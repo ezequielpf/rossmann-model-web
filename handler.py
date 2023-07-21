@@ -7,7 +7,7 @@ import os
 from rossmann.Rossmann import Rossmann
 
 # loading model
-model = pickle.load(open('/home/ezequiel/Documentos/Prejetos_Data_Science/DS_em_producao/app_web/model/model_rossmann.pkl', 'rb'))
+model = pickle.load(open('model/model_rossmann.pkl', 'rb'))
 
 # initialize API
 app = Flask(__name__)
