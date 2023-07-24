@@ -11,7 +11,8 @@ df = pd.read_csv('/home/ezequiel/Documentos/Prejetos_Data_Science/DS_em_producao
 df_test = pd.merge(df, df_store_raw, how='left', on='Store')
 
 # choosse store for prediction
-df_test = df_test[df_test['Store'] == 30]
+#df_test = df_test[df_test['Store'] == 30]
+df_test = df_test[df_test['Store'].isin([7, 25, 30])]
 
 # remove closed days
 df_test = df_test[df_test['Open'] != 0]
@@ -21,7 +22,8 @@ df_test = df_test.drop('Id', axis=1)
 data = df_test.to_json(orient='records', date_format='iso')
 
 # API call
-url = 'http://localhost:5000/rossmann/predict'
+#url = 'http://localhost:5000/rossmann/predict'
+url = 'https://rossmann-sales-predict-g0vz.onrender.com/rossmann/predict'
 #header = {'Content-type': 'application/jason'}
 data = data
 
