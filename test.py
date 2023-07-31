@@ -11,8 +11,8 @@ df = pd.read_csv('/home/ezequiel/Documentos/Prejetos_Data_Science/DS_em_producao
 df_test = pd.merge(df, df_store_raw, how='left', on='Store')
 
 # choosse store for prediction
-#df_test = df_test[df_test['Store'] == 30]
-df_test = df_test[df_test['Store'].isin([7, 25, 30])]
+df_test = df_test[df_test['Store'] == 30]
+#df_test = df_test[df_test['Store'].isin([7, 25, 30])]
 
 # remove closed days
 df_test = df_test[df_test['Open'] != 0]
@@ -31,7 +31,7 @@ data = data
 r = requests.post(url=url, json=data)
 print(f'Status Code {r.status_code}')
 
-d1 = pd.json_normalize(r.json()).head()
+d1 = pd.json_normalize(r.json())
 
 d2 = d1[['store', 'prediction']].groupby('store').sum().reset_index()
 
